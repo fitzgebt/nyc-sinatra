@@ -1,0 +1,25 @@
+<h4>Figures:</h4>
+        <% @figure = Figure.find_by_id(landmark.figure_id) %>
+        <% if @figure %>
+                <li><%= @figure.name %></li>
+                <h4>Titles:</h4>
+                <% if @figure.titles %>
+                    <% @figure.titles.each do |title| %>
+                        <li><%= title.name %></li>
+                    <% end %>
+                <% end %>        
+        <% end %><br><br>    
+
+
+
+        <h4>Figures:</h4>
+    <% @figure = Figure.find_by_id(landmark.figure_id) %>
+    <% if @figure %>
+        <li><%= @figure.name %></li>
+        <h4>Titles:</h4>
+        <% if @figure.titles %>
+            <% @figure.titles.each do |title| %>
+                <li><%= title.name %></li>
+            <% end %>
+        <% end %>        
+    <% end %><br><br>

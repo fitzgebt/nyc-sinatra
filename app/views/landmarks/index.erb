@@ -1,6 +1,21 @@
 <h2>All Historical Landmarks</h2>
 
-<!-- add content here -->
+    <% @landmarks.each do |landmark| %>
+        <h3><%= landmark.name %> - <%= landmark.year_completed %></h3>
+        <h4>Figures:</h4>
+        <%# @figure = Figure.find_by_id(landmark.figure_id) #%>
+        <% @figure = landmark.figure %>
+        <% if @figure %>
+                <li><%= @figure.name %></li>
+                <h4>Titles:</h4>
+                <% if @figure.titles %>
+                    <% @figure.titles.each do |title| %>
+                        <li><%= title.name %></li>
+                    <% end %>
+                <% end %>        
+        <% end %><br><br>   
+    <% end %>
+
 
 <a class="button" href="/figures">Figures</a>
 <a class="button" href="/">Home</a>
